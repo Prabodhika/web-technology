@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<title>Student Status</title>
+	</head>
+
+	<body>
+		<!-------------------- tab headings --------------------->
+		<ul class="nav nav-tabs nav-justified">
+			<li role="presentation">
+				<a href="index.html"><strong>Home</strong></a>
+			</li>
+			<li role="presentation">
+				<a href="studentregistration.html"><strong>Student Registration</strong></a>
+			</li>
+			<li role="presentation">
+				<a href="bookregistration.html"><strong>Book Registration</strong></a>
+			</li>
+			<li role="presentation">
+				<a href="copyregistration.html"><strong>Copy Registration</strong></a>
+			</li>
+			<li role="presentation" class="active">
+				<a href="studentstatus.html"><strong>Student Status</strong></a>
+			</li>
+			<li role="presentation">
+				<a href="bookstatus.html"><strong>Book Status</strong></a>
+			</li>
+			<li role="presentation">
+				<a href="loan.html"><strong>Loans</strong></a>
+			</li>
+			<li role="presentation">
+			<a href="returns.html"><strong>Returns</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="fines.html"><strong>Fines</strong></a>
+		</li>
+		</ul>
+		<!-------------- end of tab headings --------------------->
+		
+		<!-------------- page content ---------------------------->
+		<div class="container-fluid" style="margin-top:20px">
+		<div id="page-content-wrapper" class="col-lg-12">
+            <div style="margin-left: 100px" class="container-fluid">
+
+
+                <div class="col-lg-4">
+                    <div class="panel-default">
+                        <div class="panel-heading">Search student status by student ID *</div>
+                        <div class="panel-body">
+                            <form class="form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name ="admissionNumber" placeholder="Enter Student ID" required id="admission">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" onclick="showUser(this.form.admissionNumber.value)" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                    <div id="MemberList" class="col-lg-12">
+
+                    </div>
+
+           </div>
+		</div>  
+        </div>
+		<!-------------- end of page content --------------------->
+</body>
+</html>

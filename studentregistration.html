@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<title>Student Registration</title>
+	</head>
+
+	<body>
+	<!-------------- tab headings --------------------->
+	<ul class="nav nav-tabs nav-justified">
+		<li role="presentation">
+			<a href="index.html"><strong>Home</strong></a>
+		</li>
+		<li role="presentation" class="active">
+			<a href="studentregistration.html"><strong>Student Registration</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="bookregistration.html"><strong>Book Registration</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="copyregistration.html"><strong>Copy Registration</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="studentstatus.html"><strong>Student Status</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="bookstatus.html"><strong>Book Status</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="loan.html"><strong>Loans</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="returns.html"><strong>Returns</strong></a>
+		</li>
+		<li role="presentation">
+			<a href="fines.html"><strong>Fines</strong></a>
+		</li>
+	</ul>
+	<!-------------- end of tab headings --------------------->
+	
+	<!-------------- page content ---------------------------->
+	<div class="container-fluid" style="margin-top:20px">
+        <div id="page-content-wrapper" class="col-lg-10">
+            <div class="container-fluid">
+
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Student Registration</div>
+                        <div class="panel-body pan">
+                            <form action="registerMember.php" method="post">
+                                <div class="form-body pal">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label id="lblName" for="inputName" class="control-label">
+                                                    Name with initials *</label>
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-user"></i>
+                                                    <input id="inputName" onblur="validateName()" name="name" type="text" placeholder="" class="form-control" required/></div>
+                                                <div id="error"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputAdmission" class="control-label">
+                                                    ID *</label>
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <input id="inputAdmission" name="admissionNumber" type="text" placeholder="" class="form-control" required /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label id="lblTelephone" for="inputPhone" class="control-label">
+                                                    Telephone Number *</label>
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-user"></i>
+                                                    <input id="inputPhone" onblur="phonenumber()" type="text" name="telephone" placeholder="000-0000000" class="form-control" required /></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputEmail" class="control-label">
+                                                    E-mail</label>
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <input id="inputEmail" type="EMAIL" name="email" placeholder="email@abc.com" class="form-control"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputClass" class="control-label">
+                                                    Class *</label>
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-user"></i>
+                                                    <input id="inputClass" type="text" name="class" placeholder="" class="form-control" required /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress" class="control-label">
+                                            Address *</label>
+                                        <div class="input-icon right">
+                                            <i class="fa fa-tag"></i>
+                                            <input id="inputAddress" type="text" placeholder="" name="address" class="form-control" required /></div>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-actions text-right pal">
+                                    <button type="submit" class="btn btn-default">
+                                        Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+		</div>
+        <!-------------- end of page content ---------------------------->
+
+	</body>
+</html>
