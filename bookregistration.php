@@ -11,28 +11,28 @@
 				<a href="index.html"><strong>Home</strong></a>
 			</li>
 			<li role="presentation">
-				<a href="studentregistration.html"><strong>Student Registration</strong></a>
+				<a href="studentregistration.php"><strong>Student Registration</strong></a>
 			</li>
 			<li role="presentation" class="active">
-				<a href="bookregistration.html"><strong>Book Registration</strong></a>
+				<a href="bookregistration.php"><strong>Book Registration</strong></a>
 			</li>
 			<li role="presentation">
-				<a href="copyregistration.html"><strong>Copy Registration</strong></a>
+				<a href="copyregistration.php"><strong>Copy Registration</strong></a>
 			</li>
 			<li role="presentation">
-				<a href="studentstatus.html"><strong>Student Status</strong></a>
+				<a href="studentstatus.php"><strong>Student Status</strong></a>
 			</li>
 			<li role="presentation">
-				<a href="bookstatus.html"><strong>Book Status</strong></a>
+				<a href="bookstatus.php"><strong>Book Status</strong></a>
 			</li>
 			<li role="presentation">
-				<a href="loan.html"><strong>Loans</strong></a>
+				<a href="loan.php"><strong>Loans</strong></a>
 			</li>
 			<li role="presentation">
-			<a href="returns.html"><strong>Returns</strong></a>
+			<a href="reservation.php"><strong>Reservation</strong></a>
 		</li>
 		<li role="presentation">
-			<a href="fines.html"><strong>Fines</strong></a>
+			<a href="fines.php"><strong>Fines</strong></a>
 		</li>
 		</ul>
 		<!-------------- end of tab headings --------------------->
@@ -41,36 +41,43 @@
 		<div class="container-fluid" style="margin-top:20px">
         <div id="page-content-wrapper" class="col-lg-10">
             <div class="container-fluid">
+			
+			<?php
+			if(isset($_POST) && !empty($_POST)){
+				require('framework/DB.php');
+
+				$pdo=getDB();
+				$statement=$pdo->prepare("INSERT INTO book (title,author,copies, description) VALUES (:title,:author,:copies,:details)");
+				$status=$statement->execute(['title'=>$_POST['title'],'author'=>$_POST['author'],'copies'=>$_POST['copies'],'details'=>$_POST['details']]);
+				
+			}
+			?>
+			
+			<?php if(isset($status) && $status):?>
+				<div class="alert alert-success">Book Registration Successful!</div>
+			<?php endif ?>
+			
+			<?php if(isset($status) && !$status):?>
+				<div class="alert alert-danger">Book Registration Failed!</div>
+			<?php endif ?>
 
                 <div class="row">
                     <div class="col-lg-8">
-                            <div class="panel panel-default">
+                            <div class="panel panel-info">
                                 <div class="panel-heading">
                                     Book Registration</div>
                                 <div class="panel-body pan">
-                                    <form action="registerBook.php" method="post">
+                                    <form action="" method="post">
                                         <div class="form-body pal">
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label id="lblTitleId" for="inputTitleId" class="control-label">
-                                                            Title ID *</label>
-                                                        <div class="input-icon right">
-                                                            <i class="fa fa-user"></i>
-                                                            <input id="inputTitleId" name="titleid" type="text" placeholder="T0000" class="form-control" onblur="validateTitleId()" required/></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label id="lblISBN" for="inputISBN" class="control-label">
+                                                        <label id="lblTitle" for="inputTitle" class="control-label">
                                                             Book Title *</label>
                                                         <div class="input-icon right">
-                                                            <input id="inputISBN" name="isbn" type="text" placeholder="" class="form-control" onblur="validateISBN()" /></div>
+                                                            <input id="inputTitle" name="title" type="text" placeholder="Enter book title" class="form-control" required /></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,23 +85,22 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label id="lblISBN" for="inputISBN" class="control-label">
+                                                        <label id="lblAuthor" for="inputAuthor" class="control-label">
                                                             Author *</label>
                                                         <div class="input-icon right">
-                                                            <input id="inputISBN" name="isbn" type="text" placeholder="" class="form-control" onblur="validateISBN()" /></div>
+                                                            <input id="inputAuthor" name="author" type="text" placeholder="Author's name" class="form-control" required/></div>
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label id="lblAuthor" for="inputMainAuthor" class="control-label">
+                                                        <label id="lblDetails" for="inputDetails" class="control-label">
                                                             Book Details</label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-user"></i>
-                                                            <input id="inputMainAuthor" name="mainAuthor" type="text" placeholder="" class="form-control" onblur="validateMainAuthorName()" required /></div>
+                                                            <input id="inputDetails" name="details" type="text" placeholder="" class="form-control" /></div>
                                                     </div>
                                                 </div>
                                             </div>
