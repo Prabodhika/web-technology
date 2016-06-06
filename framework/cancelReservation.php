@@ -14,5 +14,5 @@ if (isset($_GET) && isset($_GET['id'])) {
     $success = $statement->execute([':id' => $reservationId]);
 }
 
-header('Location: ' . $_SERVER['HTTP_REFERER'].'&state=2');
+header('Location: ' . $_SERVER['HTTP_REFERER'] . '&state=2');
 

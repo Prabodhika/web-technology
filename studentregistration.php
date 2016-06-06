@@ -73,7 +73,7 @@
                                                         Telephone Number *</label>
                                                     <div class="input-icon right">
                                                         <i class="fa fa-user"></i>
-                                                        <input id="inputPhone" type="tel" name="phone" placeholder="000-0000000" class="form-control" required /></div>
+                                                        <input id="inputPhone" type="tel" name="phone" placeholder="0000000000" class="form-control" required pattern="[0-9]{10}"/></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@
                                                         Class *</label>
                                                     <div class="input-icon right">
                                                         <i class="fa fa-user"></i>
-                                                        <input id="inputClass" type="text" name="class" placeholder="" class="form-control" required /></div>
+                                                        <input id="inputClass" type="text" name="class" placeholder="00L" class="form-control" required pattern="[0-9]{1,2}[a-zA-Z ]{1}" /></div>
                                                 </div>
                                             </div>
                                         </div>

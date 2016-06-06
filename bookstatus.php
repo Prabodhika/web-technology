@@ -92,7 +92,8 @@
                                     <tr>
                                         <td><?php echo($copy['reference_number']); ?></td>
                                         <td>
-                                            <?php $availability = $copy['availability'] == 1 ? "Available" : "Not Available";
+                                            <?php
+                                            $availability = $copy['availability'] == 1 ? "Available" : "Not Available";
                                             echo($availability);
                                             ?>
                                         </td>

@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                    
+
                 <?php if (!empty($_GET) && !empty($_GET['state']) && $_GET['state'] == 2): ?>
                     <div class="alert alert-success">Reservation canceled Successfully!</div>
                 <?php endif ?>
@@ -162,10 +162,10 @@
                                         <td><?php echo($reservation['registration_number']); ?></td>
                                         <td><?php echo($reservation['reserved_at']); ?></td>
                                         <td>
-                                        <a class="btn btn-danger btn-sm" 
-                                           href="framework/cancelReservation.php?id=<?php echo($reservation['id']); ?>">
-                                            Cancel
-                                        </a>
+                                            <a class="btn btn-danger btn-sm" 
+                                               href="framework/cancelReservation.php?id=<?php echo($reservation['id']); ?>">
+                                                Cancel
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

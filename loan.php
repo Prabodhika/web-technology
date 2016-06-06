@@ -94,7 +94,7 @@
                                                             <i class="fa fa-user"></i>
 
                                                             <select name="copyId" class="form-control">
-<?php foreach ($copies as $copy): ?>
+                                                                <?php foreach ($copies as $copy): ?>
                                                                     <option value="<?php echo($copy[1]) ?>"><?php echo($copy[0]) ?></option>
                                                                 <?php endforeach ?>
                                                             </select>
@@ -113,7 +113,7 @@
                                                         <div class="input-icon right">
 
                                                             <select name="studentId" class="form-control">
-<?php foreach ($students as $student): ?>
+                                                                <?php foreach ($students as $student): ?>
                                                                     <option value="<?php echo($student[1]) ?>"><?php echo($student[0]) ?></option>
                                                                 <?php endforeach ?>
                                                             </select>

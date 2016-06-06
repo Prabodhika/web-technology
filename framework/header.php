@@ -17,7 +17,7 @@ if (!session_id()) {
     <li role="presentation" <?php if (strpos($_SERVER['REQUEST_URI'], "studentregistration") != false): ?> class="active" <?php endif; ?>>
         <a href="studentregistration.php"><strong>New Student</strong></a>
     </li>
-    <li role="presentation" <?php if (strpos($_SERVER['REQUEST_URI'], "bokregistration") != false): ?> class="active" <?php endif; ?>>
+    <li role="presentation" <?php if (strpos($_SERVER['REQUEST_URI'], "bookregistration") != false): ?> class="active" <?php endif; ?>>
         <a href="bookregistration.php"><strong>New Book</strong></a>
     </li>
     <li role="presentation" <?php if (strpos($_SERVER['REQUEST_URI'], "copyregistration") != false): ?> class="active" <?php endif; ?>>
